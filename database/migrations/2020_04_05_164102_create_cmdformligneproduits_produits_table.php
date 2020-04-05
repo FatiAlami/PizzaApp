@@ -15,7 +15,7 @@ class CreateCmdformligneproduitsProduitsTable extends Migration
         Schema::create('cmdformligneproduits_produits', function (Blueprint $table) {
             $table->increments('idFormLigneProd');
             $table->number('ligneID');
-            $table->text“('codeProduit');
+            $table->text('codeProduit');
             $table->timestamps();
         });
     }
