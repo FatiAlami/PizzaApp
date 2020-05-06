@@ -28,16 +28,84 @@ class ClientCrudController extends CrudController
 
     protected function setupListOperation()
     {
-        // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setFromDb();
+        $this->crud->setColumns([
+
+            [
+                'name' =>  'imge',
+                'label' => 'Image',
+                'type' => 'image',
+                'height' => '80px',
+                'width' => '80px'
+            ],
+            [
+                'name' => "nom",
+                'label' => "Nom",
+                'type' => 'text'
+            ],
+            [
+                'name' => 'prenom',
+                'label' => 'Prenom',
+                'type' => 'text'
+            ],
+            [
+                'name' => 'adresse',
+                'label' => 'Adresse',
+                'type' => 'text'
+            ],
+            [
+                'name' =>  'email',
+                'label' => 'Email',
+                'type' => 'text'
+            ]
+        ]);
     }
 
     protected function setupCreateOperation()
     {
         $this->crud->setValidation(ClientRequest::class);
 
-        // TODO: remove setFromDb() and manually define Fields
-        $this->crud->setFromDb();
+        $this->crud->addField([
+            'name' => 'nom',
+            'label' => 'Nom ',
+            'type' => 'text'
+
+        ]);
+        $this->crud->addField([
+            'name' => 'prenom',
+            'label' => 'Prenom ',
+            'type' => 'text'
+
+        ]);
+        $this->crud->addField([
+            'name' => 'adresse',
+            'label' => 'Adresse ',
+            'type' => 'text'
+
+        ]);
+        $this->crud->addField([
+            'name' => 'email',
+            'label' => 'Email ',
+            'type' => 'email'
+
+        ]);
+        $this->crud->addField([
+            'name' => 'login',
+            'label' => 'Login ',
+            'type' => 'text'
+
+        ]);
+        $this->crud->addField([
+            'name' => 'motdepasse',
+            'label' => 'Mot de passe ',
+            'type' => 'password'
+
+        ]);
+        $this->crud->addField([
+            'name' => 'imge',
+            'label' => 'Image ',
+            'type' => 'image'
+
+        ]);
     }
 
     protected function setupUpdateOperation()

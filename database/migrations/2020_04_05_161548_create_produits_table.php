@@ -16,7 +16,7 @@ class CreateProduitsTable extends Migration
             $table->increments('codeProduit');
             $table->text('nom');
             $table->float('prix');
-            $table->integer('catID');
+            $table->integer('category_id');
             $table->integer('remise');
             $table->dateTime('date_debut');
             $table->dateTime('date_fin');
